@@ -1,0 +1,4 @@
+# flutter pub run flutter_native_splash:create
+flutter_native_splash:
+  color: "#ffffff"
+  background_image: "assets/icon/ios.png"

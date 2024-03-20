@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base href="$FLUTTER_BASE_HREF" />
+
+    <meta charset="UTF-8" />
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible" />
+
+    <!-- App config templated tags -->
+
+    <title>{{title}}</title>
+
+    <meta name="robots" content="index,follow" />
+    <link rel="canonical" href="{{canonical_url}}" />
+
+    <link rel="icon" type="{{favicon_type}}" href="{{favicon_url}}" />
+    <meta name="description" content="{{meta.description}}" />
+
+    <meta property="og:title" content="{{meta.og.title}}" />
+    <meta property="og:locale" content="{{meta.og.locale}}" />
+    <meta property="og:description" content="{{meta.og.description}}" />
+    <meta property="og:url" content="{{meta.og.url}}" />
+    <meta property="og:site_name" content="{{meta.og.site_name}}" />
+    <meta property="og:image" content="{{meta.og.image}}" />
+
+    <meta name="twitter:site" content="{{meta.twitter.site}}" />
+    <meta name="twitter:title" content="{{meta.twitter.title}}" />
+    <meta name="twitter:creator" content="{{meta.twitter.creator}}" />
+    <meta name="twitter:description" content="{{meta.twitter.description}}" />
+    <meta name="twitter:image" content="{{meta.twitter.image}}" />
+    <!-- iOS meta tags & icons -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="apple-mobile-web-app-title" content="{{meta.og.site_name}}" />
+    <link rel="apple-touch-icon" href="{{icon_url}}" />
+    {{#itunes_id}}
+    <meta name="apple-itunes-app" content="app-id={{itunes_id}}" />
+    {{/itunes_id}}
+
+    <link rel="manifest" href="{{manifest_url}}" />
+
+    <script
+      type="text/javascript"
+      src="https://appleid.cdn-apple.com/appleauth/static/jsapi/appleid/1/en_US/appleid.auth.js"
+    ></script>
+
+    <script>
+      // The value below is injected by flutter build, do not touch.
+      var serviceWorkerVersion = null;
+    </script>
+    <!-- This script adds the flutter initialization JS code -->
+    <script src="flutter.js" defer=""></script>
+
+    <style id="splash-screen-style">
+      html {
+        height: 100%;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100%;
+        background-color: #1f1f1f;
+        background-size: 100% 100%;
+      }
+
+      .center {
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+      }
+
+      .contain {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+
+      .stretch {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+
+      .cover {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .bottom {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        -ms-transform: translate(-50%, 0);
+        transform: translate(-50%, 0);
+      }
+
+      .bottomLeft {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+      }
+
+      .bottomRight {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+      }
+    </style>
+    <script id="splash-screen-script">
+      function removeSplashFromWeb() {
+        document.getElementById("splash").remove();
+        document.getElementById("splash-branding").remove();
+        document.body.style.background = "transparent";
+      }
+    </script>
+  </head>
+
+  <body>
+    <script>
+      window.addEventListener("load", function (ev) {
+        _flutter.loader.loadEntrypoint({
+          serviceWorker: {
+            serviceWorkerVersion: serviceWorkerVersion,
+          },
+          onEntrypointLoaded: function (engineInitializer) {
+            engineInitializer
+              .initializeEngine({
+                renderer: "html",
+              })
+              .then(function (appRunner) {
+                appRunner.runApp();
+              });
+          },
+        });
+      });
+    </script>
+  </body>
+</html>

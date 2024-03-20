@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Theme applied to the Android Window while the process is starting when the OS's Dark Mode setting is off -->
+    <style name="LaunchTheme" parent="@android:style/Theme.Light.NoTitleBar">
+        <!-- Show a splash screen on the activity. Automatically removed when
+             the Flutter engine draws its first frame -->
+        <item name="android:windowBackground">@drawable/launch_background</item>
+        <item name="android:forceDarkAllowed">false</item>
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">false</item>
+        <item name="android:windowLayoutInDisplayCutoutMode">shortEdges</item>
+    </style>
+    <!-- Theme applied to the Android Window as soon as the process has started.
+         This theme determines the color of the Android Window while your
+         Flutter UI initializes, as well as behind your Flutter UI while its
+         running.
+
+         This Theme is only used starting with V2 of Flutter's Android embedding. -->
+    <style name="NormalTheme" parent="@android:style/Theme.Light.NoTitleBar">
+        <item name="android:windowBackground">?android:colorBackground</item>
+    </style>
+
+    <!-- Customize Text Colors -->
+    <style name="sqip.Theme.CardEntry" parent="sqip.Theme.BaseCardEntry">
+        <item name="colorPrimaryDark">#000000</item>
+        <item name="colorPrimary">#111111</item>
+        <!-- <item name="windowBackground">@android:color/white</item> -->
+        <!-- <item name="fontFamily"></item> -->
+        <!-- <item name="textColorHint">#ff0000</item> -->
+        <!-- <item name="colorAccent">#00ff00</item> -->
+        <!-- <item name="sqipErrorColor">#000000</item> -->
+        <!-- <item name="sqipSaveButtonText">Add card2</item>
+        <item name="sqipActivityTitle">Add card</item> -->
+        <item name="android:windowAnimationStyle">@style/CardEntryActivityAnimation</item>
+    </style>
+
+    <style name="CardEntryActivityAnimation" parent="android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@anim/enter_from_bottom</item>
+        <item name="android:activityOpenExitAnimation">@anim/stay_put</item>
+        <item name="android:activityCloseEnterAnimation">@anim/stay_put</item>
+        <item name="android:activityCloseExitAnimation">@anim/exit_to_bottom</item>
+    </style>
+</resources>
